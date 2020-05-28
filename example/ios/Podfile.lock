@@ -3,33 +3,32 @@ PODS:
   - flutter_twitter_login (0.0.1):
     - Flutter
     - TwitterCore
-    - TwitterKit
+    - TwitterKit5
   - TwitterCore (3.2.0)
-  - TwitterKit (3.4.0):
+  - TwitterKit5 (5.1.0):
     - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
-  - Flutter (from `/Users/dan/flutter/bin/cache/artifacts/engine/ios-release`)
-  - flutter_twitter_login (from `/Users/dan/Documents/flutter_twitter_login/ios`)
-  - TwitterKit
+  - Flutter (from `/Users/seanwong/SDK/flutter/bin/cache/artifacts/engine/ios`)
+  - flutter_twitter_login (from `/Users/seanwong/Projects/flutter_twitter_login/ios`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - TwitterCore
-    - TwitterKit
+    - TwitterKit5
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "/Users/dan/flutter/bin/cache/artifacts/engine/ios-release"
+    :path: "/Users/seanwong/SDK/flutter/bin/cache/artifacts/engine/ios"
   flutter_twitter_login:
-    :path: "/Users/dan/Documents/flutter_twitter_login/ios"
+    :path: "/Users/seanwong/Projects/flutter_twitter_login/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  flutter_twitter_login: 4e72731a8bac4c0fbde3abc95439566f93717d0b
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_twitter_login: d92b3f7bc85e4543ee31e8a4d94621d2d0e1bd5f
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: bc7bd086b9b724a1d888745a054e1d0b1ecc4f3f
+  TwitterKit5: de28c7a3e022f18fd644e0bd61f9fca448991faa
 
-PODFILE CHECKSUM: 8c9fa2bb051d54d03245c4f331b1ba12f3b35252
+PODFILE CHECKSUM: b05a57e7e08564cb8e77447446e1812e566338e7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1
