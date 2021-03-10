@@ -58,13 +58,6 @@ void main() {
       log.clear();
     });
 
-    test('can not call constructor with null or empty key or secret', () {
-      expect(() => new TwitterLogin(consumerKey: null, consumerSecret: null),
-          throwsA(anything));
-      expect(() => new TwitterLogin(consumerKey: '', consumerSecret: ''),
-          throwsA(anything));
-    });
-
     test('get isSessionActive - false when currentSession is null', () async {
       setMethodCallResponse(null);
 
@@ -108,7 +101,8 @@ void main() {
     test('get currentSession - parses session correctly', () async {
       setMethodCallResponse(kSessionMap);
 
-      final TwitterSession session = await (sut.currentSession as FutureOr<TwitterSession>);
+      final TwitterSession session =
+          await (sut.currentSession as FutureOr<TwitterSession>);
       expectSessionParsedCorrectly(session);
       expect(log, [
         isMethodCall(
