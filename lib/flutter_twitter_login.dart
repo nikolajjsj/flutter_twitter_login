@@ -12,10 +12,8 @@ class TwitterLogin {
   /// The [consumerKey] and [consumerSecret] can be obtained from the Twitter
   /// apps site at https://apps.twitter.com/, in the "Keys and Access Tokens"
   /// tab.
-  TwitterLogin({
-    required this.consumerKey,
-    required this.consumerSecret,
-  })   : assert(
+  TwitterLogin({required this.consumerKey, required this.consumerSecret})
+      : assert(
           consumerKey.isNotEmpty,
           'Consumer key may not be null or empty.',
         ),
@@ -61,7 +59,7 @@ class TwitterLogin {
 
     if (session == null) return null;
 
-    return new TwitterSession.fromMap(session.cast<String, dynamic>());
+    return TwitterSession.fromMap(session.cast<String, dynamic>());
   }
 
   /// Logs the user in.
@@ -100,10 +98,10 @@ class TwitterLogin {
   ///
   /// See the [TwitterLoginResult] class for more documentation.
   Future<TwitterLoginResult> authorize() async {
-    final Map<dynamic, dynamic> result = await (channel.invokeMethod(
-        'authorize', _keys) as FutureOr<Map<dynamic, dynamic>>);
+    final Map<dynamic, dynamic> result =
+        await (channel.invokeMethod('authorize', _keys));
 
-    return new TwitterLoginResult._(result.cast<String, dynamic>());
+    return TwitterLoginResult._(result.cast<String, dynamic>());
   }
 
   /// Logs the currently logged in user out.
@@ -147,7 +145,7 @@ class TwitterLoginResult {
         return TwitterLoginStatus.error;
     }
 
-    throw new StateError('Invalid status: $status');
+    throw StateError('Invalid status: $status');
   }
 }
 
